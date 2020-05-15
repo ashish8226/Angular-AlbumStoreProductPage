@@ -22,12 +22,12 @@ describe("ProductDescription", () => {
 
     assert(
       img.length > 0,
-      "Something happened and it looks like the ProductDescription HTML file is missing the `<img>` tag."
+      "Something happened and it looks like the Album HTML file is missing the `<img>` tag."
     );
 
     assert(
       img.attr("src") !== undefined,
-      "The ProductDescription HTML file `<img>` tag is missing the `src` attribute."
+      "The Album HTML file `<img>` tag is missing the `src` attribute."
     );
 
     assert(

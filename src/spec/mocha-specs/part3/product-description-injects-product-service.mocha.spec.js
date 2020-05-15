@@ -12,12 +12,12 @@ describe('ProductDescription', function() {
     }
     let re = /constructor\(([\w\s\_\:]+)\)/
     let match = file.match(re);
-    assert(Array.isArray(match), "The ProductDescription constructor has no arguments.")
+    assert(Array.isArray(match), "The Album constructor has no arguments.")
 
     let arg = match[1].trim();
 
     let re_arg = /\s*private\s+\_productService\s*\:\s*ProductService\s*/
     let arg_match = arg.match(re_arg);
-    assert(Array.isArray(arg_match), "The ProductDescription constructor doesn't define a private `_productService` variable.");
+    assert(Array.isArray(arg_match), "The Album constructor doesn't define a private `_productService` variable.");
   });
 });

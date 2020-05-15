@@ -19,7 +19,7 @@ describe("ProductDescription", () => {
     let $ = cheerio.load(productPageContent);
     let descriptionDiv = $(".description");
 
-    // parse html to test for description div inside ProductDescription Component
+    // parse html to test for description div inside Album Component
     let description;
     const productDescriptionNodes = helpers.parseFile(productDescriptionFile);
     productDescriptionNodes[0].attrs.find(

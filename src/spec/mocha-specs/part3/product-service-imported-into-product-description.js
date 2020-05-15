@@ -8,9 +8,9 @@ describe('ProductDescription', function() {
     try {
       file = fs.readFileSync(__dirname + '/../../../app/product-description/product-description.component.ts').toString();
     } catch (e) {
-      assert(false, "The ProductDescription hasn't been created yet.")
+      assert(false, "The Album hasn't been created yet.")
     }
     let re = /import\s*{\s*ProductService\s*}\s*from\s*[\'|\"]\.\.\/product\.service[\'|\"]\;?/
-    assert(Array.isArray(file.match(re)) && file.match(re) != null, "The ProductService hasn't been imported into the ProductDescription yet.");
+    assert(Array.isArray(file.match(re)) && file.match(re) != null, "The ProductService hasn't been imported into the Album yet.");
   });
 });

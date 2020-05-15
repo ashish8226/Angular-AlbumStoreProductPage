@@ -12,24 +12,24 @@ describe('ProductDescription', function() {
     }
     let re = /ngOnInit\(\s*\)\s*\{\s*([\w\s\(\)\.\_\=\>]+)\;?\s*\}/
     let match = file.match(re);
-    assert(Array.isArray(match), "The ProductDescription `ngOnInit()` method body doesn't contain anything.")
+    assert(Array.isArray(match), "The Album `ngOnInit()` method body doesn't contain anything.")
 
     let callToGetAlbum = match[1].trim();
 
     if (callToGetAlbum.includes('subscribe')) {
       let re2 = /this\._productService\s*\.\s*getAlbum\(1\)\s*\.\s*subscribe\(([\w\s\=\.\>]+)\)/
       let match2 = match[1].match(re2)
-      assert(Array.isArray(match2), "The ProductDescription's `ngOnInit()` method body isn't chaining the correct call to subscribe onto the end of the call to `getAlbum()`.")
+      assert(Array.isArray(match2), "The Album's `ngOnInit()` method body isn't chaining the correct call to subscribe onto the end of the call to `getAlbum()`.")
 
       let variable_used_to_capture_response = match2[1].match(/\s*(\w+)\s*\=/);
 
       let expression = variable_used_to_capture_response[1] + "\\s*\\=\\>\\s*this\\.albumInfo\\s*\\=\\s*" + variable_used_to_capture_response[1]
       let regex = new RegExp(expression, 'g')
 
-      assert(Array.isArray(match2[1].match(regex)), "The call to `getAlbum()` in ProductDescription's `ngOnInit()` method body isn't subscribing to the response and assigning it to `this.albumInfo`.")
+      assert(Array.isArray(match2[1].match(regex)), "The call to `getAlbum()` in Album's `ngOnInit()` method body isn't subscribing to the response and assigning it to `this.albumInfo`.")
     } else {
       let re2 = /this\._productService\s*\.\s*getAlbum\(1\)/
-      assert(match[0].match(re2), "The ProductDescription `ngOnInit()` method body isn't making the correct call to the ProductService's `getAlbum` method.")
+      assert(match[0].match(re2), "The Album `ngOnInit()` method body isn't making the correct call to the ProductService's `getAlbum` method.")
     }
 
   });
@@ -43,6 +43,6 @@ describe('ProductDescription', function() {
     }
     let re = /ProductDescriptionComponent\s*implements\s*OnInit\s*\{\s*(\w+)/
     let match = file.match(re);
-    assert(match[1] == 'albumInfo', "The ProductDescription doesn't have a class property named `albumInfo`.")
+    assert(match[1] == 'albumInfo', "The Album doesn't have a class property named `albumInfo`.")
   });
 });

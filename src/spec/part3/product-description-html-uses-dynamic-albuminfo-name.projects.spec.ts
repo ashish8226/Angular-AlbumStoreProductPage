@@ -39,10 +39,10 @@ try {
 }
 
 class AProductService {
-  
+
 }
 
-describe('ProductDescription', () => {
+describe('Album', () => {
 
   let product_service;
   let ProvidedService;
@@ -105,7 +105,7 @@ describe('ProductDescription', () => {
     } else {
       since('We\'d like you to query the albumInfo property directly for the album name, and we\'re not seeing that you\'re doing that.').expect(0).toBe(1);
     }
-    
+
   }));
 
 });

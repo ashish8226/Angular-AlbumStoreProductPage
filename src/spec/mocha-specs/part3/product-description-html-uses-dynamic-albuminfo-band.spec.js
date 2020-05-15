@@ -22,7 +22,7 @@ describe("ProductDescription", () => {
 
     assert(
       albumBandDiv.length > 0,
-      "Something happened and it looks like the ProductDescription HTML file does not contain a paragraph with a class of `band-name`."
+      "Something happened and it looks like the Album HTML file does not contain a paragraph with a class of `band-name`."
     );
 
     assert(
